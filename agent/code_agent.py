@@ -1,12 +1,12 @@
-from agents.base_agent import BaseAgent
-from tools.basetool import execute_code, execute_command,read_document
+from base_agent import BaseAgent
+# from tools.basetool import execute_code, execute_command,read_document
 
 class Code(BaseAgent):
     def __init__(self):
         super().__init__("Code Agent", "A code agent that specializes in data processing and analysis.")
 
     def run(self, user_message: str) -> str:
-        tools = [read_document, execute_code, execute_command]
+        # tools = [read_document, execute_code, execute_command]
         prompt = f"""
         You are an expert Python programmer specializing in data processing and analysis. 
         Generate Python code based on the following user request:
@@ -25,6 +25,6 @@ class Code(BaseAgent):
         - Avoid unnecessary complexity; prioritize readability and efficiency.
         """
 
-        intent_response = self.invoke(prompt,tools=tools)
+        intent_response = self.invoke(prompt)
         return intent_response.content
 
