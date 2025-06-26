@@ -11,8 +11,8 @@ class BaseAgent(ABC):
         self.description = description
         #加载环境变量/获得API
         load_dotenv()
-        base_url = "https://free.v36.cm/v1"
-        api_key = "sk-oKklUA2rSW6u1ijuD8C8Fb1f9b9f429fAf4e734b77C999Df"
+        base_url = ""
+        api_key = ""
         self.llm = ChatOpenAI(model="gpt-3.5-turbo", temperature = 0,openai_api_key=api_key,base_url=base_url )
 
     @abstractmethod
